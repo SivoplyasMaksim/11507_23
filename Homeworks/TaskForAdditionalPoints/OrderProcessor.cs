@@ -34,6 +34,7 @@ namespace TaskForAdditionalPoints
             var discountTypes = assembly.GetTypes()
                 .Where(t => typeof(IDiscountRule).IsAssignableFrom(t) && !t.IsInterface && !t.IsAbstract);
 
+
             foreach (var type in discountTypes)
             {
                 var rule = (IDiscountRule)Activator.CreateInstance(type);
